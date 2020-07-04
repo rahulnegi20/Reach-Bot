@@ -5,4 +5,4 @@ otherwise code has no errors
 
 - increase range of randints if you are getting blocked as instagram detecting u as a bot
 
-if you have any query ig: _sarcaxtic_
+if you have any query ig:__sarcaxtic__
