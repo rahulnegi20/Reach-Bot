@@ -18,7 +18,7 @@ username.send_keys('username') #type your username here
 password = webdriver.find_element_by_name('password')
 password.send_keys('password') #type your password here
 
-button_login = webdriver.find_element_by_css_selector('#react-root > section > main > div > article > div > div:nth-child(1) > div > form > div:nth-child(4) > button')
+button_login = webdriver.find_element_by_css_selector('#loginForm > div > div:nth-child(3) > button > div')
 button_login.click()
 sleep(10)
 
@@ -51,10 +51,10 @@ for hashtag in hashtag_list:
     sleep(randint(1, 2))
     try:
          for x in range(1, 1000):
-            username = webdriver.find_element_by_xpath('/html/body/div[4]/div[2]/div/article/header/div[2]/div[1]/div[1]/div/a').text
-
+            username = webdriver.find_element_by_xpath('/html/body/div[4]/div[2]/div/article/header/div[2]/div[1]/div[1]/span/a').text
+ # If we already follow, do not unfollow
             if username not in prev_user_list:
-                  # If we already follow, do not unfollow
+                 
                 if webdriver.find_element_by_xpath('/html/body/div[4]/div[2]/div/article/header/div[2]/div[1]/div[2]/button').text == 'Follow':
                     #print('path is same')
 
@@ -66,7 +66,7 @@ for hashtag in hashtag_list:
                     # Liking the picture
                     
                     # button_like = webdriver.find_element_by_xpath('/html/body/div[4]/div[2]/div/article/div[2]/section[1]/span[1]/button/svg/path')
-                    button_like = webdriver.find_element_by_css_selector('body > div._2dDPU.CkGkG > div.zZYga > div > article > div.eo2As > section.ltpMr.Slqrh > span.fr66n > button > svg')
+                    button_like = webdriver.find_element_by_css_selector('body > div._2dDPU.CkGkG > div.zZYga > div > article > div.eo2As > section.ltpMr.Slqrh > span.fr66n > button')
                     
                     button_like.click()
                     likes += 1
@@ -77,9 +77,9 @@ for hashtag in hashtag_list:
                     print('{}_{}: {}'.format(hashtag, x, comm_prob))
                     if comm_prob > 7:
                         comments += 1
-                        webdriver.find_element_by_xpath('/html/body/div[4]/div[2]/div/article/div[2]/section[1]/span[2]/button/svg').click()
+                        webdriver.find_element_by_xpath('body > div._2dDPU.CkGkG > div.zZYga > div > article > div.eo2As > section.ltpMr.Slqrh > span.fr66n > button').click()
                        # webdriver.find_element_by_css_selector('body > div._2dDPU.CkGkG > div.zZYga > div > article > div.eo2As > section.ltpMr.Slqrh > span._15y0l > button > svg#').click()
-                        comment_box = webdriver.find_element_by_xpath('/html/body/div[4]/div[2]/div/article/div[2]/section[3]/div/form/textarea')
+                        comment_box = webdriver.find_element_by_xpath('/html/body/div[4]/div[2]/div/article/div[3]/section[3]/div/form/textarea')
                         #comment_box = webdriver.find_element_by_css_selector('body > div._2dDPU.CkGkG > div.zZYga > div > article > div.eo2As > section.sH9wk._JgwE > div > form > textarea')
 
                         if (comm_prob < 7):
